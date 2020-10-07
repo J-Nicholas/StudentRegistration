@@ -8,5 +8,12 @@
     <artifactId>Student_Registration</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.6</version>
+        </dependency>
+    </dependencies>
 </project>
