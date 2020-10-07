@@ -1,3 +1,5 @@
+package StudentRegistration;
+
 public class IDNumberFactory {
 
     private static int IDCount = 1;
