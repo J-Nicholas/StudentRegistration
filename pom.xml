@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <build>
-
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -23,26 +22,7 @@
                     <check/>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
-                <configuration>
-                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                    <reportsDirectory>../shippable/testresults</reportsDirectory>
-                    <useSystemClassLoader>false</useSystemClassLoader>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-junit4</artifactId>
-                        <version>2.7.2</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
         </plugins>
-
-
     </build>
 
     <dependencies>
@@ -74,4 +54,14 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
