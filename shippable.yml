@@ -6,7 +6,5 @@ build:
   ci:
     #Create folders for test
     - mkdir -p shippable/testresults
+    - mvn test
 
-after_success:
-  #- mvn clean cobertura:cobertura
-  - mvn test
