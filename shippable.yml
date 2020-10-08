@@ -1,6 +1,6 @@
 language: java
-script:
-  - javac StudentTest
-  - javac CourseTest
-  - java StudentTest
-  - java CourseTest
+jdk:
+- openjdk11
+after_success:
+- mvn clean cobertura:cobertura
+- mvn test
