@@ -22,7 +22,7 @@ public class CourseTest {
         computerScience.addModule(softwareEngineering);
         computerScience.addModule(softwareEngineering); // multiple calls should only allow module to be added once
 
-        assertEquals(0, computerScience.getModules().size());
+        assertEquals(1, computerScience.getModules().size());
         assertEquals(1, softwareEngineering.getCourses().size());
         assertTrue(computerScience.getModules().contains(softwareEngineering));
         assertTrue(softwareEngineering.getCourses().contains(computerScience));
