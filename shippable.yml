@@ -8,6 +8,5 @@ build:
     - mkdir -p shippable/testresults
 
 after_success:
-#- mvn clean cobertura:cobertura
+  - mvn clean cobertura:cobertura
   - mvn test
-  
