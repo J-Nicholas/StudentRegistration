@@ -1,6 +1,6 @@
 language: java
 jdk:
-- openjdk11
+  - oraclejdk8
 after_success:
 #- mvn clean cobertura:cobertura
-- mvn test
+  - mvn test
