@@ -1,34 +1,34 @@
-import StudentRegistration.Course;
-import StudentRegistration.Module;
-import StudentRegistration.Student;
-import org.joda.time.DateTime;
-import static org.junit.jupiter.api.Assertions.*;
+package StudentRegistration;
 
-class StudentTest {
+import org.joda.time.DateTime;
+
+import static org.junit.Assert.*;
+
+public class StudentTest {
 
     Student harry;
     Module softwareEngineering;
     Course computerScience;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setup() {
+    @org.junit.Before
+    public void setup() {
         harry = new Student("Harry", "Smith", new DateTime(1993, 8, 1, 0, 0));
         softwareEngineering = new Module("Software Engineering", "CT417");
         computerScience = new Course("Computer Science & IT");
     }
 
-    @org.junit.jupiter.api.Test
-    void getFullName() {
+    @org.junit.Test
+    public void getFullName() {
         assertEquals("Harry Smith", harry.getFullName());
     }
 
-    @org.junit.jupiter.api.Test
-    void getUserName() {
+    @org.junit.Test
+    public void getUserName() {
         assertEquals("HarrySmith01081993", harry.getUserName());
     }
 
-    @org.junit.jupiter.api.Test
-    void enrollInCourse() {
+    @org.junit.Test
+    public void enrollInCourse() {
         assertEquals(0, harry.getCourses().size());
         assertEquals(0, computerScience.getRegisteredStudents().size());
         assertFalse(computerScience.getRegisteredStudents().contains(harry));
@@ -46,8 +46,8 @@ class StudentTest {
         assertEquals(harry, computerScience.getRegisteredStudents().get(0));
     }
 
-    @org.junit.jupiter.api.Test
-    void disEnrollInCourse() {
+    @org.junit.Test
+    public void disEnrollInCourse() {
         harry.enrollInCourse(computerScience);
         assertTrue(computerScience.getRegisteredStudents().contains(harry));
         assertTrue(harry.getCourses().contains(computerScience));
@@ -59,13 +59,13 @@ class StudentTest {
         assertFalse(computerScience.getRegisteredStudents().contains(harry));
     }
 
-    @org.junit.jupiter.api.Test
-    void disEnrollInCourseFalsePositiveCheck() {
+    @org.junit.Test
+    public void disEnrollInCourseFalsePositiveCheck() {
         assertFalse(harry.disEnrollInCourse(computerScience));
     }
 
-    @org.junit.jupiter.api.Test
-    void enrollInModule() {
+    @org.junit.Test
+    public void enrollInModule() {
         assertEquals(0, harry.getModules().size());
         assertEquals(0, softwareEngineering.getRegisteredStudents().size());
         assertFalse(softwareEngineering.getRegisteredStudents().contains(harry));
@@ -80,16 +80,16 @@ class StudentTest {
         assertEquals(harry, softwareEngineering.getRegisteredStudents().get(0));
     }
 
-    @org.junit.jupiter.api.Test
-    void disEnrollModule() {
+    @org.junit.Test
+    public void disEnrollModule() {
         harry.enrollInModule(softwareEngineering);
         assertEquals(1, harry.getModules().size());
         harry.disEnrollModule(softwareEngineering);
         assertEquals(0, harry.getModules().size());
     }
 
-    @org.junit.jupiter.api.Test
-    void disEnrollModuleFalsePositiveCheck() {
+    @org.junit.Test
+    public void disEnrollModuleFalsePositiveCheck() {
         assertFalse(harry.disEnrollModule(softwareEngineering));
     }
 

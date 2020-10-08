@@ -1,22 +1,19 @@
-import StudentRegistration.Course;
-import StudentRegistration.Module;
-import org.junit.jupiter.api.Test;
+package StudentRegistration;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class CourseTest {
+public class CourseTest {
 
     Module softwareEngineering;
     Course computerScience;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setup() {
+    @org.junit.Before
+    public void setup() {
         softwareEngineering = new Module("Software Engineering", "CT417");
         computerScience = new Course("Computer Science & IT");
     }
 
-    @Test
-    void addModule() {
+    @org.junit.Test
+    public void addModule() {
         assertEquals(0, computerScience.getModules().size());
         assertEquals(0, softwareEngineering.getCourses().size());
         assertFalse(computerScience.getModules().contains(softwareEngineering));
@@ -31,8 +28,8 @@ class CourseTest {
         assertTrue(softwareEngineering.getCourses().contains(computerScience));
     }
 
-    @Test
-    void removeModule() {
+    @org.junit.Test
+    public void removeModule() {
         computerScience.addModule(softwareEngineering);
         assertEquals(1, computerScience.getModules().size());
         assertEquals(1, softwareEngineering.getCourses().size());
