@@ -1,0 +1,6 @@
+language: java
+script:
+  - javac StudentTest
+  - javac CourseTest
+  - java StudentTest
+  - java CourseTest
